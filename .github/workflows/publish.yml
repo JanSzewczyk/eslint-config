@@ -1,52 +1,29 @@
-name: "🚀 Publish"
+name: Publish 🚀
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  test:
-    name: 🧪 Test
+  publish:
+    name: Publish 🚀
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [ 14.x, 16.x ]
-        os: [ ubuntu-latest, windows-latest ]
-
+        node-version: [20.x]
+        os: [ubuntu-latest]
     steps:
       - name: Checkout code 📚
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
       - name: Set up Node 🟢
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-
+          cache: "npm"
       - name: Install packages ⚙️
         run: npm ci
-
-      - name: Run tests 🧪
-        run: npm run test
-
-  publish:
-    name: 🚀 Publish
-    runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' }}
-    needs: [ test ]
-    steps:
-      - name: Checkout code 📚
-        uses: actions/checkout@v3
-
-      - name: Set up Node 🟢
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install packages ⚙️
-        run: npm ci
-
-      - name: Deploy package 🚀
-        run: npm run semantic-release
+      - name: Publish package 🚀
+        run: npx semantic-release
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
