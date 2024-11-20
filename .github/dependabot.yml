@@ -1,11 +1,27 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
-    directory: /
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
-      interval: weekly
+      interval: "weekly"
+      day: "sunday"
+      time: "21:37"
+      timezone: "Europe/Warsaw"
+    groups:
+      github-dependencies:
+        patterns:
+          - "*"
 
-  - package-ecosystem: npm
-    directory: /
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: daily
+      interval: "weekly"
+      day: "sunday"
+      time: "21:37"
+      timezone: "Europe/Warsaw"
+    groups:
+      eslint-config-dependencies:
+        patterns:
+          - "*"
