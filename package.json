@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "lint:ci": "next lint --max-warnings=0",
+    "lint:ci": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix",
     "lint:inspect": "npx @eslint/config-inspector@latest",
     "prettier:check": "prettier --check .",
