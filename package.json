@@ -27,7 +27,7 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "lint:ci": "eslint . --max-warnings=0",
+    "lint:ci": "eslint . -o eslint-results.sarif -f @microsoft/eslint-formatter-sarif",
     "lint:fix": "eslint . --fix",
     "lint:inspect": "npx @eslint/config-inspector@latest",
     "prettier:check": "prettier --check .",
@@ -51,6 +51,7 @@
     "typescript-eslint": "^8.15.0"
   },
   "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@szum-tech/prettier-config": "^1.3.5",
     "@szum-tech/semantic-release-preset": "^1.5.7",
     "eslint": "^9.15.0",

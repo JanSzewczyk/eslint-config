@@ -1,19 +1,19 @@
 <!-- markdownlint-disable --><!-- textlint-disable -->
+
 # 📓 Changelog
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0](https://github.com/JanSzewczyk/eslint-config/compare/v1.3.6...v2.0.0) (2024-11-21)
 
-
 ### Features
 
-* **eslint:** migrate eslint config to v9 ([90a7f5f](https://github.com/JanSzewczyk/eslint-config/commit/90a7f5f5dacc2219250ab50f155fe06be331d4b9))
-
+- **eslint:** migrate eslint config to v9 ([90a7f5f](https://github.com/JanSzewczyk/eslint-config/commit/90a7f5f5dacc2219250ab50f155fe06be331d4b9))
 
 ### BREAKING CHANGES
 
-* **eslint:** rebuild eslint configuration
+- **eslint:** rebuild eslint configuration
 
 ## [1.3.6](https://github.com/JanSzewczyk/eslint-config-szum-tech/compare/v1.3.5...v1.3.6) (2022-05-31)
 
