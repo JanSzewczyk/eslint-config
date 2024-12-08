@@ -2,20 +2,26 @@
 
 > Github
 >
-> ![GitHub release (latest by date)](https://img.shields.io/github/v/release/JanSzewczyk/eslint-config-szum-tech) > [![GitHub pull requests](https://img.shields.io/github/issues-pr/JanSzewczyk/eslint-config-szum-tech)](https://github.com/JanSzewczyk/eslint-config-szum-tech/pulls) > [![GitHub issues](https://img.shields.io/github/issues/JanSzewczyk/eslint-config-szum-tech)](https://github.com/JanSzewczyk/eslint-config-szum-tech/issues) > ![GitHub Repo stars](https://img.shields.io/github/stars/JanSzewczyk/eslint-config-szum-tech?style=social)
+> ![GitHub release (latest by date)](https://img.shields.io/github/v/release/JanSzewczyk/eslint-config-szum-tech) >
+> [![GitHub pull requests](https://img.shields.io/github/issues-pr/JanSzewczyk/eslint-config-szum-tech)](https://github.com/JanSzewczyk/eslint-config-szum-tech/pulls) >
+> [![GitHub issues](https://img.shields.io/github/issues/JanSzewczyk/eslint-config-szum-tech)](https://github.com/JanSzewczyk/eslint-config-szum-tech/issues) >
+> ![GitHub Repo stars](https://img.shields.io/github/stars/JanSzewczyk/eslint-config-szum-tech?style=social)
 
 > Github Actions
 >
-> [![🚀 publish](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/publish.yml) > [![test](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/test.yml) > [![CodeQL](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/codeql.yml)
+> [![🚀 publish](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/publish.yml) >
+> [![test](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/test.yml) >
+> [![CodeQL](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/JanSzewczyk/eslint-config-szum-tech/actions/workflows/codeql.yml)
 
 > NPM
 >
-> [![npm](https://img.shields.io/npm/v/@szum-tech/eslint-config-szum-tech)](https://www.npmjs.com/package/@szum-tech/eslint-config-szum-tech) > ![npm](https://img.shields.io/npm/dm/@szum-tech/eslint-config-szum-tech)
+> [![npm](https://img.shields.io/npm/v/@szum-tech/eslint-config-szum-tech)](https://www.npmjs.com/package/@szum-tech/eslint-config-szum-tech) >
+> ![npm](https://img.shields.io/npm/dm/@szum-tech/eslint-config-szum-tech)
 
 [![MIT License](https://img.shields.io/badge/license-MIT-red.svg?style=flat)](https://github.com/JanSzewczyk/eslint-config-szum-tech/blob/main/LICENSE)
 
-These are settings for ESLint working
-as [shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html).
+These are settings for ESLint working as
+[shareable config](http://eslint.org/docs/developer-guide/shareable-configs.html).
 
 ## What it does 🤔
 
@@ -47,9 +53,9 @@ npx install-peerdeps --dev @szum-tech/eslint-config-szum-tech
 ## Usage
 
 Once the `@szum-tech/eslint-config-szum-tech` package is installed, you can use it by specifying
-`@szum-tech/eslint-config-szum-tech` in
-the [extends](https://eslint.org/docs/user-guide/configuring/#extending-configuration-files)
-section of your [ESLint configuration](https://eslint.org/docs/user-guide/configuring/).
+`@szum-tech/eslint-config-szum-tech` in the
+[extends](https://eslint.org/docs/user-guide/configuring/#extending-configuration-files) section of your
+[ESLint configuration](https://eslint.org/docs/user-guide/configuring/).
 
 ### Set configuration
 
