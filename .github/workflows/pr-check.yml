@@ -50,6 +50,26 @@ jobs:
           sarif_file: eslint-results.sarif
           wait-for-processing: true
 
+  build:
+    name: Build 🏗️
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [22.x]
+        os: [ubuntu-latest]
+    steps:
+      - name: Checkout code 📚
+        uses: actions/checkout@v4
+      - name: Set up Node 🟢
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - name: Install packages ⚙️
+        run: npm ci
+      - name: Build Check 🏗️
+        run: npm run build
+
   dependency-review:
     name: Dependency Review
     runs-on: ubuntu-latest
