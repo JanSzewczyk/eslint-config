@@ -22,6 +22,8 @@ jobs:
           cache: "npm"
       - name: Install packages ⚙️
         run: npm ci
+      - name: Build 🏗️
+        run: npm run build
       - name: Publish package 🚀
         run: npx semantic-release
         env:

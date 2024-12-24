@@ -13,13 +13,6 @@ All notable changes to this project will be documented in this file. See
 
 * update readme file ([1dad83b](https://github.com/JanSzewczyk/eslint-config/commit/1dad83b43bc6cf4674d531d65e676d3688f73bf0))
 
-<!-- markdownlint-disable --><!-- textlint-disable -->
-
-# 📓 Changelog
-
-All notable changes to this project will be documented in this file. See
-[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 # [2.0.0](https://github.com/JanSzewczyk/eslint-config/compare/v1.3.6...v2.0.0) (2024-11-21)
 
 ### Features

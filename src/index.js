@@ -39,7 +39,7 @@ const vitestFiles = ["**/__tests__/**/*", "**/*.test.*"];
 const testFiles = ["**/tests/**", ...vitestFiles];
 const playwrightFiles = ["**/e2e/**", "**/*.e2e.*"];
 
-export const config = [
+const config = [
   {
     name: "eslint/ignores",
     ignores: [
