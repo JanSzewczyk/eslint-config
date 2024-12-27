@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/JanSzewczyk/eslint-config/compare/v2.0.1...v2.1.0) (2024-12-27)
+
+### Features
+
+* **configuration:** upgrade configuration to support ESM and CJS formats ([cc06c88](https://github.com/JanSzewczyk/eslint-config/commit/cc06c88577f42c37565797f8b7a726181e373019))
+
+### Documentation
+
+* **README:** update `README` file documentation ([331dd11](https://github.com/JanSzewczyk/eslint-config/commit/331dd1181d85ea47a1cba92304192a4ca601fb48))
+
+### Build System
+
+* **deps:** bump deps ([e3dfa91](https://github.com/JanSzewczyk/eslint-config/commit/e3dfa91acdb0fa8034a77496997047b2e5bd1440))
+
 ## [2.0.1](https://github.com/JanSzewczyk/eslint-config/compare/v2.0.0...v2.0.1) (2024-12-08)
 
 ### Bug Fixes
