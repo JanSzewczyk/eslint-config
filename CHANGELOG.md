@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.0...v2.1.1) (2025-01-01)
+
+### Bug Fixes
+
+* **configuration:** fix `import` configuration for typescript projects ([7a45b6b](https://github.com/JanSzewczyk/eslint-config/commit/7a45b6b4c93768008832d67ab04fe325e691ceae))
+
+### Documentation
+
+* **README:** add new `eslint-import-resolver-typescript` package to deps ([c5557fd](https://github.com/JanSzewczyk/eslint-config/commit/c5557fd634d873ec81ef8eb10a5ff7db18100e51))
+
+### Build System
+
+* **deps:** bump deps ([ea930fb](https://github.com/JanSzewczyk/eslint-config/commit/ea930fbe0fef10aafb646c4eeedd60a7d1bca8aa))
+
 ## [2.1.0](https://github.com/JanSzewczyk/eslint-config/compare/v2.0.1...v2.1.0) (2024-12-27)
 
 ### Features
