@@ -1,8 +1,11 @@
+import { readFileSync, existsSync } from "node:fs";
+import { resolve, join } from "node:path";
+
 import * as importPlugin from "eslint-plugin-import";
 import jestDomPlugin from "eslint-plugin-jest-dom";
 import playwrightPlugin from "eslint-plugin-playwright";
 import reactPlugin from "eslint-plugin-react";
-import reactHooksPlugin from "eslint-plugin-react-hooks";
+import * as reactHooksPlugin from "eslint-plugin-react-hooks";
 import storybookPlugin from "eslint-plugin-storybook";
 import tailwindcssPlugin from "eslint-plugin-tailwindcss";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
@@ -16,24 +19,56 @@ const ERROR = "error";
 const WARN = "warn";
 const OFF = "off";
 
-const has = (pkg) => {
-  try {
-    import.meta.resolve(pkg, import.meta.url);
-    return true;
-  } catch {
-    return false;
-  }
-};
+function findPackageJson(startDir) {
+  let currentDir = startDir;
 
-const hasTypeScript = has("typescript");
-const hasTailwindcss = has("tailwindcss");
-const hasReact = has("react");
-const hasNext = has("next");
-const hasTestingLibrary = has("@testing-library/dom");
-const hasJestDom = has("@testing-library/jest-dom");
-const hasVitest = has("vitest");
-const hasPlaywright = has("@playwright/test");
-const hasStorybook = has("storybook");
+  while (true) {
+    const packageJsonPath = join(currentDir, "package.json");
+
+    if (existsSync(packageJsonPath)) {
+      return packageJsonPath;
+    }
+
+    const parentDir = resolve(currentDir, "..");
+    if (parentDir === currentDir) {
+      // Reached the root of the filesystem
+      break;
+    }
+    currentDir = parentDir;
+  }
+  return null;
+}
+
+function isPackageInstalled(packageName) {
+  const currentDir = process.cwd(); // Get the current working directory
+  const packageJsonPath = findPackageJson(currentDir);
+
+  // Read the package.json file
+  try {
+    const packageJson = readFileSync(packageJsonPath, "utf-8");
+    const parsedPackageJson = JSON.parse(packageJson);
+
+    // Check if the package is listed in dependencies or devDependencies
+    const dependencies = parsedPackageJson.dependencies || {};
+    const devDependencies = parsedPackageJson.devDependencies || {};
+
+    return dependencies.hasOwnProperty(packageName) || devDependencies.hasOwnProperty(packageName);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error("Error reading package.json file:", error);
+    process.exit(1);
+  }
+}
+
+const hasTypeScript = isPackageInstalled("typescript");
+const hasTailwindcss = isPackageInstalled("tailwindcss");
+const hasReact = isPackageInstalled("react");
+const hasNext = isPackageInstalled("next");
+const hasTestingLibrary = isPackageInstalled("@testing-library/dom");
+const hasJestDom = isPackageInstalled("@testing-library/jest-dom");
+const hasVitest = isPackageInstalled("vitest");
+const hasPlaywright = isPackageInstalled("@playwright/test");
+const hasStorybook = isPackageInstalled("storybook");
 
 const typeScriptExtensions = [".ts", ".cts", ".mts", ".tsx"];
 const allExtensions = [...typeScriptExtensions, ".js", ".jsx", ".mjs", ".cjs"];
@@ -41,6 +76,40 @@ const allExtensions = [...typeScriptExtensions, ".js", ".jsx", ".mjs", ".cjs"];
 const vitestFiles = ["**/__tests__/**/*", "**/*.test.*"];
 const testFiles = ["**/tests/**", ...vitestFiles];
 const playwrightFiles = ["**/e2e/**", "**/*.e2e.*"];
+
+/* eslint-disable no-console */
+function showFeaturesTable() {
+  console.log("Hello There!\nHere are the features detected in your project:");
+  const tableData = [
+    { Name: "TypeScript", Status: hasTypeScript ? "✔️" : "❌" },
+    { Name: "React", Status: hasReact ? "✔️" : "❌" },
+    { Name: "Next", Status: hasNext ? "✔️" : "❌" },
+    { Name: "Testing Library", Status: hasTestingLibrary ? "✔️" : "❌" },
+    { Name: "Jest Dom", Status: hasJestDom ? "✔️" : "❌" },
+    { Name: "Vitest", Status: hasVitest ? "✔️" : "❌" },
+    { Name: "Playwright", Status: hasPlaywright ? "✔️" : "❌" },
+    { Name: "Storybook", Status: hasStorybook ? "✔️" : "❌" }
+  ].sort((a, b) => {
+    // Check if Status contains the checkmark
+    const aHasCheck = a.Status.includes("✔️");
+    const bHasCheck = b.Status.includes("✔️");
+
+    // Sort tasks with checkmarks first
+    if (aHasCheck && !bHasCheck) {
+      return -1;
+    } else if (!aHasCheck && bHasCheck) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+
+  console.table(tableData);
+  console.log("Thank you for using @szum-tech/eslint-config!");
+}
+/* eslint-enable no-console */
+
+showFeaturesTable();
 
 const config = [
   {
@@ -73,6 +142,20 @@ const config = [
         warnOnUnsupportedTypeScriptVersion: false
       }
     },
+    settings: hasTypeScript
+      ? {
+          "import/extensions": allExtensions,
+          "import/external-module-folders": ["node_modules", "node_modules/@types"],
+          "import/parsers": {
+            "@typescript-eslint/parser": typeScriptExtensions
+          },
+          "import/resolver": {
+            node: {
+              extensions: allExtensions
+            }
+          }
+        }
+      : {},
     rules: {
       "no-unexpected-multiline": ERROR,
       "no-warning-comments": [ERROR, { terms: ["FIXME"], location: "anywhere" }],
@@ -241,18 +324,6 @@ const config = [
         },
         plugins: {
           "@typescript-eslint": tsEslint.plugin
-        },
-        settings: {
-          "import/extensions": allExtensions,
-          "import/external-module-folders": ["node_modules", "node_modules/@types"],
-          "import/parsers": {
-            "@typescript-eslint/parser": typeScriptExtensions
-          },
-          "import/resolver": {
-            node: {
-              extensions: allExtensions
-            }
-          }
         },
         rules: {
           "no-unused-expressions": OFF,
