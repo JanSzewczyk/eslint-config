@@ -60,12 +60,22 @@ const config = [
       import: importPlugin
     },
     languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: {
         ...globals.browser,
         ...globals.node
       },
       parserOptions: {
         warnOnUnsupportedTypeScriptVersion: false
+      }
+    },
+    settings: {
+      "import/resolver": {
+        // You will also need to install and configure the TypeScript resolver
+        // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+        typescript: hasTypeScript,
+        node: true
       }
     },
     rules: {
