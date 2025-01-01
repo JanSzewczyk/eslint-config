@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.4](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.3...v2.1.4) (2025-01-01)
+
+### Bug Fixes
+
+* **configuration:** update checking installed function ([ebdfde1](https://github.com/JanSzewczyk/eslint-config/commit/ebdfde1c9020770386af0c4e7ebe57918fddaa06))
+
 ## [2.1.3](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.2...v2.1.3) (2025-01-01)
 
 ### Bug Fixes
