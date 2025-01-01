@@ -1,4 +1,4 @@
-import importPlugin from "eslint-plugin-import";
+import * as importPlugin from "eslint-plugin-import";
 import jestDomPlugin from "eslint-plugin-jest-dom";
 import playwrightPlugin from "eslint-plugin-playwright";
 import reactPlugin from "eslint-plugin-react";
@@ -60,7 +60,7 @@ const config = [
   {
     name: "eslint/config/base&import",
     plugins: {
-      import: importPlugin.flatConfigs.recommended.plugins.import
+      import: importPlugin
     },
     languageOptions: {
       ecmaVersion: "latest",
