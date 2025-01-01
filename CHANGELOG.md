@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.2...v2.1.3) (2025-01-01)
+
+### Bug Fixes
+
+* **configuration:** final fix imports rules for typescript ([b3c94a9](https://github.com/JanSzewczyk/eslint-config/commit/b3c94a93ddfb82e2365c53595aca897d113b5d7c))
+
 ## [2.1.2](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.1...v2.1.2) (2025-01-01)
 
 ### Bug Fixes
