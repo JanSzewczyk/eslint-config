@@ -35,6 +35,9 @@ const hasVitest = has("vitest");
 const hasPlaywright = has("@playwright/test");
 const hasStorybook = has("storybook");
 
+const typeScriptExtensions = [".ts", ".cts", ".mts", ".tsx"];
+const allExtensions = [...typeScriptExtensions, ".js", ".jsx", ".mjs", ".cjs"];
+
 const vitestFiles = ["**/__tests__/**/*", "**/*.test.*"];
 const testFiles = ["**/tests/**", ...vitestFiles];
 const playwrightFiles = ["**/e2e/**", "**/*.e2e.*"];
@@ -57,7 +60,7 @@ const config = [
   {
     name: "eslint/config/base&import",
     plugins: {
-      import: importPlugin
+      import: importPlugin.flatConfigs.recommended.plugins.import
     },
     languageOptions: {
       ecmaVersion: "latest",
@@ -68,14 +71,6 @@ const config = [
       },
       parserOptions: {
         warnOnUnsupportedTypeScriptVersion: false
-      }
-    },
-    settings: {
-      "import/resolver": {
-        // You will also need to install and configure the TypeScript resolver
-        // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
-        typescript: hasTypeScript,
-        node: true
       }
     },
     rules: {
@@ -246,6 +241,18 @@ const config = [
         },
         plugins: {
           "@typescript-eslint": tsEslint.plugin
+        },
+        settings: {
+          "import/extensions": allExtensions,
+          "import/external-module-folders": ["node_modules", "node_modules/@types"],
+          "import/parsers": {
+            "@typescript-eslint/parser": typeScriptExtensions
+          },
+          "import/resolver": {
+            node: {
+              extensions: allExtensions
+            }
+          }
         },
         rules: {
           "no-unused-expressions": OFF,
