@@ -226,6 +226,7 @@ jobs:
 ![NPM (prod) Dependency Version](https://img.shields.io/npm/dependency-version/%40szum-tech%2Feslint-config/eslint-plugin-testing-library)
 ![NPM (prod) Dependency Version](https://img.shields.io/npm/dependency-version/%40szum-tech%2Feslint-config/globals)
 ![NPM (prod) Dependency Version](https://img.shields.io/npm/dependency-version/%40szum-tech%2Feslint-config/typescript-eslint)
+![NPM (prod) Dependency Version](https://img.shields.io/npm/dependency-version/%40szum-tech%2Feslint-config/eslint-import-resolver-typescript)
 
 ## Changelog
 
