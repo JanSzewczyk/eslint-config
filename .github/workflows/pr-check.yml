@@ -3,21 +3,20 @@ name: PR Checks ✅
 on:
   pull_request:
 
+env:
+  NODE_VERSION: 22.x
+
 jobs:
   prettier:
     name: Prettier 🧹
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [22.x]
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code 📚
         uses: actions/checkout@v4
       - name: Set up Node 🟢
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
       - name: Install dependencies ⚙️
         run: npm ci
@@ -26,21 +25,19 @@ jobs:
 
   lint:
     name: ESlint ⬣
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [22.x]
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code 📚
         uses: actions/checkout@v4
       - name: Set up Node 🟢
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
       - name: Install dependencies ⚙️
         run: npm ci
+      - name: Install utils ⚙️
+        run: npm install @microsoft/eslint-formatter-sarif
       - name: ESlint Check ⬣
         run: npm run lint:ci
         continue-on-error: true
@@ -52,18 +49,14 @@ jobs:
 
   build:
     name: Build 🏗️
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [22.x]
-        os: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code 📚
         uses: actions/checkout@v4
       - name: Set up Node 🟢
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
       - name: Install packages ⚙️
         run: npm ci
@@ -71,7 +64,7 @@ jobs:
         run: npm run build
 
   dependency-review:
-    name: Dependency Review
+    name: Dependency Review 👀
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -79,7 +72,7 @@ jobs:
     steps:
       - name: Checkout code 📚
         uses: actions/checkout@v4
-      - name: Dependency Review
+      - name: Dependency Review 👀
         uses: actions/dependency-review-action@v4
         with:
           comment-summary-in-pr: on-failure

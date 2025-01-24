@@ -50,7 +50,6 @@
     "typescript-eslint": "^8.21.0"
   },
   "devDependencies": {
-    "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@szum-tech/prettier-config": "^1.4.5",
     "@szum-tech/semantic-release-config": "^2.2.1",
     "eslint": "^9.18.0",
