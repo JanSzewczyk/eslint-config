@@ -46,20 +46,19 @@ use, because the configuration dynamically adapts to the needs of the project.
 ## 📖 Table of Contents
 
 <!-- TOC -->
-
-- [@szum-tech/eslint-config](#szum-techeslint-config)
-  - [📚 Features](#-features)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [🎯 Getting Started](#-getting-started)
-    - [⚙️ Installation](#-installation)
-    - [Configuration](#configuration)
-  - [💻 Scripts](#-scripts)
-  - [🚀 Minimal GitHub ESlint check workflow](#-minimal-github-eslint-check-workflow)
-  - [🛠️ Developer Info](#-developer-info)
-    - [Dependencies](#dependencies)
-  - [Changelog](#changelog)
-  - [📜 License](#-license)
-  <!-- TOC -->
+* [@szum-tech/eslint-config](#szum-techeslint-config)
+  * [📚 Features](#-features)
+  * [📖 Table of Contents](#-table-of-contents)
+  * [🎯 Getting Started](#-getting-started)
+    * [⚙️ Installation](#-installation)
+    * [Configuration](#configuration)
+  * [💻 Scripts](#-scripts)
+  * [🚀 Minimal GitHub ESlint check workflow](#-minimal-github-eslint-check-workflow)
+  * [🛠️ Developer Info](#-developer-info)
+    * [Dependencies](#dependencies)
+  * [📒 Changelog](#-changelog)
+  * [📜 License](#-license)
+<!-- TOC -->
 
 ## 🎯 Getting Started
 
@@ -228,7 +227,7 @@ jobs:
 ![NPM (prod) Dependency Version](https://img.shields.io/npm/dependency-version/%40szum-tech%2Feslint-config/typescript-eslint)
 ![NPM (prod) Dependency Version](https://img.shields.io/npm/dependency-version/%40szum-tech%2Feslint-config/eslint-import-resolver-typescript)
 
-## Changelog
+## 📒 Changelog
 
 The [changelog](https://github.com/JanSzewczyk/eslint-config/blob/main/CHANGELOG.md) is regularly updated to reflect
 what's changed in each new release.
