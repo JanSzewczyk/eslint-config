@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.5](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.4...v2.1.5) (2025-01-24)
+
+### Bug Fixes
+
+* **config:** update configuration ([ae6ad2c](https://github.com/JanSzewczyk/eslint-config/commit/ae6ad2c772e1b8b62b082c44665a0554f6b45243))
+
+### Documentation
+
+* **readme:** update `Table of Contents` ([1d093ef](https://github.com/JanSzewczyk/eslint-config/commit/1d093efa3d18014f3598f9b39b28f41937cd0538))
+
+### Build System
+
+* **deps:** bump deps ([d19c178](https://github.com/JanSzewczyk/eslint-config/commit/d19c178a0ec9ed520bd08c8cf52c1dcf7530f74f))
+
+### Continuous Integration
+
+* **gh-action:** update Github actions ([a5afeb6](https://github.com/JanSzewczyk/eslint-config/commit/a5afeb6c0688e77840b876edde41c4189a5fbffc))
+
 ## [2.1.4](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.3...v2.1.4) (2025-01-01)
 
 ### Bug Fixes
