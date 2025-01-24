@@ -1,5 +1,5 @@
-import { readFileSync, existsSync } from "node:fs";
-import { resolve, join } from "node:path";
+import { existsSync, readFileSync } from "node:fs";
+import { join, resolve } from "node:path";
 
 import * as importPlugin from "eslint-plugin-import";
 import jestDomPlugin from "eslint-plugin-jest-dom";
@@ -15,29 +15,7 @@ import tsEslint from "typescript-eslint";
 import nextPlugin from "@next/eslint-plugin-next";
 import vitestPlugin from "@vitest/eslint-plugin";
 
-const ERROR = "error";
-const WARN = "warn";
-const OFF = "off";
-
-function findPackageJson(startDir) {
-  let currentDir = startDir;
-
-  while (true) {
-    const packageJsonPath = join(currentDir, "package.json");
-
-    if (existsSync(packageJsonPath)) {
-      return packageJsonPath;
-    }
-
-    const parentDir = resolve(currentDir, "..");
-    if (parentDir === currentDir) {
-      // Reached the root of the filesystem
-      break;
-    }
-    currentDir = parentDir;
-  }
-  return null;
-}
+const logger = console;
 
 function isPackageInstalled(packageName) {
   const currentDir = process.cwd(); // Get the current working directory
@@ -54,10 +32,32 @@ function isPackageInstalled(packageName) {
 
     return dependencies.hasOwnProperty(packageName) || devDependencies.hasOwnProperty(packageName);
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error("Error reading package.json file:", error);
+    logger.error("Error reading package.json file:", error);
     process.exit(1);
   }
+}
+
+const PACKAGE_JSON = "package.json";
+
+function findPackageJson(startDir) {
+  let currentDir = startDir;
+
+  while (true) {
+    const packageJsonPath = join(currentDir, PACKAGE_JSON);
+
+    if (existsSync(packageJsonPath)) {
+      return packageJsonPath;
+    }
+
+    const parentDir = resolve(currentDir, "..");
+    if (parentDir === currentDir) {
+      // Reached the root of the filesystem
+      break;
+    }
+    currentDir = parentDir;
+  }
+
+  return null;
 }
 
 const hasTypeScript = isPackageInstalled("typescript");
@@ -77,9 +77,7 @@ const vitestFiles = ["**/__tests__/**/*", "**/*.test.*"];
 const testFiles = ["**/tests/**", ...vitestFiles];
 const playwrightFiles = ["**/e2e/**", "**/*.e2e.*"];
 
-/* eslint-disable no-console */
 function showFeaturesTable() {
-  console.log("Hello There!\nHere are the features detected in your project:");
   const tableData = [
     { Name: "TypeScript", Status: hasTypeScript ? "✔️" : "❌" },
     { Name: "React", Status: hasReact ? "✔️" : "❌" },
@@ -104,12 +102,22 @@ function showFeaturesTable() {
     }
   });
 
-  console.table(tableData);
-  console.log("Thank you for using @szum-tech/eslint-config!");
+  logger.log("Hello There!\nHere are the features detected in your project:");
+
+  logger.table(tableData);
+
+  logger.log(`Dear Developer\n`);
+  logger.log("Thanks a lot for using '@szum-tech/eslint-config'");
+  logger.log("If you like it, leave a star ⭐ 👉 https://github.com/JanSzewczyk/handy-szumrak");
+  logger.log("And recommend to others\n");
+  logger.log(`May the SZUMRAK be with You 🚀🚀🚀`);
 }
-/* eslint-enable no-console */
 
 showFeaturesTable();
+
+const ERROR = "error";
+const WARN = "warn";
+const OFF = "off";
 
 const config = [
   {
