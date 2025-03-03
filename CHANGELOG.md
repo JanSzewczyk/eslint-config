@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.6](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.5...v2.1.6) (2025-03-03)
+
+### Bug Fixes
+
+* **config:** update configuration with storybook build dir ignores (`storybook-static`) ([4247f53](https://github.com/JanSzewczyk/eslint-config/commit/4247f53a8d02011eb09f2dd5a3be075a1509046c))
+
+### Build System
+
+* **deps:** bump deps ([cb95f30](https://github.com/JanSzewczyk/eslint-config/commit/cb95f30820590402bd18258b8e2328f48de4e639))
+* **deps:** bump deps ([fc14112](https://github.com/JanSzewczyk/eslint-config/commit/fc14112e9d54a3c2ca0408e5cf62d2e735c89d48))
+
+### Continuous Integration
+
+* **gh-action:** add permissions to `PR Checks ✅` gh action ([66c4714](https://github.com/JanSzewczyk/eslint-config/commit/66c4714a76b07602ea08f341e6a4606114e4445a))
+
 ## [2.1.5](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.4...v2.1.5) (2025-01-24)
 
 ### Bug Fixes
