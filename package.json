@@ -52,7 +52,6 @@
   "devDependencies": {
     "@szum-tech/prettier-config": "^1.6.1",
     "@szum-tech/semantic-release-config": "^2.3.0",
-    "@types/eslint-plugin-tailwindcss": "^3.17.0",
     "eslint": "^9.21.0",
     "prettier": "^3.5.3",
     "semantic-release": "^24.2.3",
@@ -64,5 +63,10 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "overrides": {
+    "eslint-plugin-storybook": {
+      "typescript": ">=5.8.2"
+    }
   }
 }
