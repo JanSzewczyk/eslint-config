@@ -130,7 +130,8 @@ const config = [
       "**/playwright-report/**",
       "**/server-build/**",
       "**/dist/**",
-      "**/.next/**"
+      "**/.next/**",
+      "**/storybook-static/**"
     ]
   },
 
@@ -171,7 +172,7 @@ const config = [
       "no-unused-vars": [
         WARN,
         {
-          args: "after-used",
+          args: "all",
           argsIgnorePattern: "^_",
           ignoreRestSiblings: true,
           varsIgnorePattern: "^ignored"
