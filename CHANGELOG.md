@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.10](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.9...v2.1.10) (2025-10-05)
+
+### Bug Fixes
+
+* **deps:** update eslint peer dependency to version >=9.32 ([b77159f](https://github.com/JanSzewczyk/eslint-config/commit/b77159ffbb76470625f1ef515b42d8524194d7aa))
+
+### Build System
+
+* **deps:** bump the project-dependencies group across 1 directory with 10 updates ([7837651](https://github.com/JanSzewczyk/eslint-config/commit/7837651a047b3905098aa1a105134c1e5bd8c356))
+
 ## [2.1.9](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.8...v2.1.9) (2025-09-17)
 
 ### Bug Fixes
