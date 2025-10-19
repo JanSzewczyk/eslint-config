@@ -18,7 +18,7 @@ jobs:
       - name: Checkout code 📚
         uses: actions/checkout@v5
       - name: Set up Node 🟢
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
@@ -34,7 +34,7 @@ jobs:
       - name: Checkout code 📚
         uses: actions/checkout@v5
       - name: Set up Node 🟢
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
@@ -46,7 +46,7 @@ jobs:
         run: npm run lint:ci
         continue-on-error: true
       - name: Upload ESlint results to GitHub
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: eslint-results.sarif
           wait-for-processing: true
@@ -58,7 +58,7 @@ jobs:
       - name: Checkout code 📚
         uses: actions/checkout@v5
       - name: Set up Node 🟢
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: "npm"
