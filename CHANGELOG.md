@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.12](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.11...v2.1.12) (2025-11-25)
+
+### Bug Fixes
+
+* **deps:** sync package-lock.json ([13c26b2](https://github.com/JanSzewczyk/eslint-config/commit/13c26b2f2b573089e67ab60532f16cca12a1d754))
+
 ## [2.1.11](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.10...v2.1.11) (2025-11-25)
 
 ### Bug Fixes
