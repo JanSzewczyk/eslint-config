@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.14](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.13...v2.1.14) (2026-01-07)
+
+### Bug Fixes
+
+* update Node.js version to 24.x in CI configurations ([163b283](https://github.com/JanSzewczyk/eslint-config/commit/163b28320a7772fd0ddbe7a5e276266558cd2d08))
+
 ## [2.1.13](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.12...v2.1.13) (2026-01-07)
 
 ### Bug Fixes
