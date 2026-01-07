@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.15](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.14...v2.1.15) (2026-01-07)
+
+### Bug Fixes
+
+* disable TailwindCSS compatibility for v4 ([4ab0da2](https://github.com/JanSzewczyk/eslint-config/commit/4ab0da26fce188bffe49e8392297564d379b4395))
+
 ## [2.1.14](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.13...v2.1.14) (2026-01-07)
 
 ### Bug Fixes
