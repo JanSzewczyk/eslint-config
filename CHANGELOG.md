@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.13](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.12...v2.1.13) (2026-01-07)
+
+### Bug Fixes
+
+* **tailwindcss:** use tailwind css for v4 ([e102b01](https://github.com/JanSzewczyk/eslint-config/commit/e102b01424d0e76018b5eaf0d7e5e03a883678e4))
+
+### Build System
+
+* **deps:** bump the project-dependencies group across 1 directory with 10 updates ([a329389](https://github.com/JanSzewczyk/eslint-config/commit/a3293894921be404b8ca77744e05f780c426e123))
+
 ## [2.1.12](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.11...v2.1.12) (2025-11-25)
 
 ### Bug Fixes
