@@ -61,7 +61,9 @@ function findPackageJson(startDir) {
 }
 
 const hasTypeScript = isPackageInstalled("typescript");
-const hasTailwindcss = isPackageInstalled("tailwindcss");
+// Turn off TailwindCSS for now, as it's not yet compatible with Tailwind v4'
+const hasTailwindcss = false;
+// const hasTailwindcss = isPackageInstalled("tailwindcss");
 const hasReact = isPackageInstalled("react");
 const hasNext = isPackageInstalled("next");
 const hasTestingLibrary = isPackageInstalled("@testing-library/dom");
