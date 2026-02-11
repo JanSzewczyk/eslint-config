@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.16](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.15...v2.1.16) (2026-02-11)
+
+### Bug Fixes
+
+* **deps:** update ESLint and related dependencies to latest versions ([98df223](https://github.com/JanSzewczyk/eslint-config/commit/98df22335bb81b975caf158c109072a76781b91e))
+
 ## [2.1.15](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.14...v2.1.15) (2026-01-07)
 
 ### Bug Fixes
