@@ -19,11 +19,16 @@
 A shared configuration is an NPM package that exports a configuration as an array. It's super convenient for anyone to
 use, because the configuration dynamically adapts to the needs of the project.
 
+**✨ Ready for ESLint v10!** This configuration uses the modern flat config format and is compatible with ESLint v9.x. Full ESLint v10 support will be added once the ecosystem plugins (especially typescript-eslint) release compatible versions.
+
 ## 📚 Features
 
-- [Opinionated code formatter with support for: JavaScript, Typescript, JSX, ...](https://eslint.org/)
+- **[ESLint v9](https://eslint.org/)** - Latest stable version with full plugin ecosystem support (ready for v10 migration)
+- **Flat Config Format** - Uses the modern `eslint.config.js` format (legacy `.eslintrc` is not supported)
+- **Auto-detection** - Automatically enables plugins based on your project dependencies
+- [Opinionated code formatter with support for: JavaScript, TypeScript, JSX, ...](https://eslint.org/)
 - [Support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names](https://www.npmjs.com/package/eslint-plugin-import)
-- [Typescript support](https://typescript-eslint.io/packages/typescript-eslint/) - **only** if
+- [TypeScript support](https://typescript-eslint.io/packages/typescript-eslint/) - **only** if
   [typescript](https://www.npmjs.com/package/typescript) is used in project
 - [React](https://www.npmjs.com/package/eslint-plugin-react) &
   [React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) specific linting rules - **only** if
@@ -67,52 +72,56 @@ use, because the configuration dynamically adapts to the needs of the project.
 [@szum-tech/eslint-config](https://github.com/JanSzewczyk/eslint-config) is available as
 [npm package](https://www.npmjs.com/package/@szum-tech/eslint-config).
 
+**Requirements:**
+- **ESLint** v9.0.0 or higher
+- **Node.js** v20.x+ / v22.x+ / v24.x+
+
 ```shell
 # NPM
-npm install --save-dev eslint @szum-tech/eslint-config
+npm install --save-dev eslint@latest @szum-tech/eslint-config
 
 # YARN
-yarn add -D eslint @szum-tech/eslint-config
+yarn add -D eslint@latest @szum-tech/eslint-config
 
 # PNPM
-pnpm add --save-dev eslint @szum-tech/eslint-config
+pnpm add --save-dev eslint@latest @szum-tech/eslint-config
 
 # BUN
-bun add --dev eslint @szum-tech/eslint-config
+bun add --dev eslint@latest @szum-tech/eslint-config
 ```
 
 ### Configuration
 
-Basic information needed to understand, how to set up eslint configuration, you are able to find in
-[Configuration Files](https://eslint.org/docs/latest/use/configure/configuration-files) documentation.
+This package uses the [ESLint Flat Config format](https://eslint.org/docs/latest/use/configure/configuration-files)
+introduced in ESLint v9 and required in ESLint v10. The legacy `.eslintrc` format is not supported.
 
-A `@szum-tech/eslint-config` is an npm package that exports a configuration object or array.
+A `@szum-tech/eslint-config` is an npm package that exports a configuration array that automatically adapts to your
+project's dependencies.
 
-**`@szum-tech/eslint-config` could be set via either:**
+**Configuration file: `eslint.config.(js|cjs|mjs)`**
 
-- A `eslint.config.(js|cjs|mjs)` file that exports an array
+#### Simple Usage
 
-**The following examples show how to integrate configuration in project:**
-
-- Via `eslint.config.mjs` file:
-
-Once you use a predefined configuration, you can export the entire configuration.
+Export the entire configuration as-is:
 
 ```js
+// eslint.config.mjs
 export { default } from "@szum-tech/eslint-config";
 ```
 
-`@szum-tech/eslint-config` is flexible enough to allow for configuration extensions. You’ll need to use the spread
-operator to insert those items into the configuration array.
+#### Extended Configuration
+
+`@szum-tech/eslint-config` is flexible enough to allow for configuration extensions. Use the spread operator to insert
+the configuration into your array:
 
 ```js
-// eslint.config.js
+// eslint.config.mjs
 import szumTechEslintConfig from "@szum-tech/eslint-config";
 
 export default [
   ...szumTechEslintConfig,
 
-  // your modifications
+  // Your custom modifications
   {
     rules: {
       "no-unused-vars": "warn"
@@ -121,21 +130,18 @@ export default [
 ];
 ```
 
-- Via `eslint.config.cjs` file:
+#### CommonJS Format
+
+For projects using CommonJS:
 
 ```js
-module.exports = require("@szum-tech/semantic-release-config/with-npm");
-```
-
-OR, extends
-
-```js
-const szumTechEslintConfig = require("@szum-tech/semantic-release-config/with-npm");
+// eslint.config.cjs
+const szumTechEslintConfig = require("@szum-tech/eslint-config");
 
 module.exports = [
   ...szumTechEslintConfig,
 
-  // your modifications
+  // Your custom modifications
   {
     rules: {
       "no-unused-vars": "warn"
@@ -143,6 +149,9 @@ module.exports = [
   }
 ];
 ```
+
+> **Note:** The configuration automatically detects which libraries are installed in your project (React, TypeScript,
+> Next.js, Vitest, etc.) and enables the appropriate ESLint plugins and rules.
 
 ## 💻 Scripts
 
@@ -168,11 +177,11 @@ Suggested scripts you can add to `package.json` file:
 - `lint:inspect`: Launches a visual representation of the ESLint configuration file (check http://localhost:7777 in your
   browser). Allows you to navigate through the rules, plugins, and language configurations that are enabled or disabled
 
-## 🚀 Minimal GitHub ESlint check workflow
+## 🚀 Minimal GitHub ESLint check workflow
 
-Here are the minimal steps required to run an ESlint check. Creating or adding any content to a PR will trigger this
+Here are the minimal steps required to run an ESLint check. Creating or adding any content to a PR will trigger this
 event. Not only will this action validate the code and return its results, but it will also add highlighted parts of the
-code that have an error to the comments under the PR thanks to the `Upload Eslint results to GitHub` step, which uses
+code that have an error to the comments under the PR thanks to the `Upload ESLint results to GitHub` step, which uses
 `github/codeql-action/upload-sarif`.
 
 ```yaml
@@ -183,11 +192,11 @@ on:
 
 jobs:
   lint:
-    name: ESlint ⬣
+    name: ESLint ⬣
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [24.x] # Use Node.js 20+, 22+, or 24+
         os: [ubuntu-latest]
     steps:
       - name: Checkout code 📚
@@ -199,10 +208,10 @@ jobs:
           cache: "npm"
       - name: Install dependencies ⚙️
         run: npm ci
-      - name: ESlint Check ⬣
+      - name: ESLint Check ⬣
         run: npm run lint:ci
         continue-on-error: true
-      - name: Upload ESlint results to GitHub
+      - name: Upload ESLint results to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: eslint-results.sarif
