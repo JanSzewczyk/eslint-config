@@ -22,6 +22,7 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
@@ -32,7 +33,8 @@
     "lint:fix": "eslint . --fix",
     "lint:inspect": "npx @eslint/config-inspector@latest",
     "prettier:check": "prettier --check .",
-    "prettier:write": "prettier --write ."
+    "prettier:write": "prettier --write .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^16.1.6",
@@ -52,6 +54,7 @@
   "devDependencies": {
     "@szum-tech/prettier-config": "^1.6.2",
     "@szum-tech/semantic-release-config": "^2.3.7",
+    "@types/node": "^22.15.0",
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
     "semantic-release": "^25.0.3",
