@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.16...v2.2.0) (2026-02-12)
+
+### Features
+
+* add TypeScript support and ESLint configuration ([2ccc818](https://github.com/JanSzewczyk/eslint-config/commit/2ccc8184bdff82c43c125febec0047bbbd83b8cb))
+
 ## [2.1.16](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.15...v2.1.16) (2026-02-11)
 
 ### Bug Fixes
