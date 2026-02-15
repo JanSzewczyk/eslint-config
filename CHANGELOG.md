@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/JanSzewczyk/eslint-config/compare/v2.2.1...v2.2.2) (2026-02-15)
+
+### Bug Fixes
+
+* update importPlugin import syntax to use namespace import ([11b8e21](https://github.com/JanSzewczyk/eslint-config/commit/11b8e21f69db6fee77745827b4215b53605849b7))
+
 ## [2.2.1](https://github.com/JanSzewczyk/eslint-config/compare/v2.2.0...v2.2.1) (2026-02-15)
 
 ### Bug Fixes
