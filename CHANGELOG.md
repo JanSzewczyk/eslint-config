@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/JanSzewczyk/eslint-config/compare/v2.2.0...v2.2.1) (2026-02-15)
+
+### Bug Fixes
+
+* **configuration:** rename prettier config and update TypeScript settings ([a3d26ed](https://github.com/JanSzewczyk/eslint-config/commit/a3d26ed7dd444963078b56a0819af3e09e6dee69))
+
 ## [2.2.0](https://github.com/JanSzewczyk/eslint-config/compare/v2.1.16...v2.2.0) (2026-02-12)
 
 ### Features
