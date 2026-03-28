@@ -36,19 +36,36 @@
     "prettier:write": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
+  "overrides": {
+    "eslint-plugin-import": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-jest-dom": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-react": {
+      "eslint": "$eslint"
+    },
+    "eslint-plugin-react-hooks": {
+      "eslint": "$eslint"
+    },
+    "typescript-eslint": {
+      "typescript": "$typescript"
+    }
+  },
   "dependencies": {
     "@next/eslint-plugin-next": "^16.1.6",
     "@vitest/eslint-plugin": "^1.6.9",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jest-dom": "^5.4.0",
+    "eslint-plugin-jest-dom": "^5.5.0",
     "eslint-plugin-playwright": "^2.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-storybook": "^10.2.8",
-    "eslint-plugin-testing-library": "^7.13.5",
+    "eslint-plugin-storybook": "^10.3.3",
+    "eslint-plugin-testing-library": "^7.16.2",
     "globals": "^17.3.0",
-    "typescript-eslint": "^8.55.0"
+    "typescript-eslint": "^8.57.2"
   },
   "devDependencies": {
     "@szum-tech/prettier-config": "^1.6.2",
@@ -59,10 +76,10 @@
     "prettier": "^3.8.1",
     "semantic-release": "^25.0.3",
     "tsup": "^8.5.0",
-    "typescript": "^5.8.3"
+    "typescript": "^6.0.2"
   },
   "peerDependencies": {
-    "eslint": ">=9.0.0"
+    "eslint": ">=10"
   },
   "publishConfig": {
     "access": "public"
