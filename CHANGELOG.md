@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/JanSzewczyk/eslint-config/compare/v2.2.2...v2.3.0) (2026-03-28)
+
+### Features
+
+* upgrade eslint to v10 ([59b8bb3](https://github.com/JanSzewczyk/eslint-config/commit/59b8bb3cf0dd06d2316ad90e08606cee5a6e0f58))
+
+### Build System
+
+* **deps:** bump the project-dependencies group across 1 directory with 9 updates ([1a3d8a6](https://github.com/JanSzewczyk/eslint-config/commit/1a3d8a6ccc29ea15ad8426f05e24fbe956672448))
+
 ## [2.2.2](https://github.com/JanSzewczyk/eslint-config/compare/v2.2.1...v2.2.2) (2026-02-15)
 
 ### Bug Fixes
