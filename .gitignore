@@ -7,3 +7,5 @@
 
 # REPORTS
 /eslint-results.sarif
+
+.claude/settings.local.json
