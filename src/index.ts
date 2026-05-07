@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { join, resolve } from "node:path";
 
 import { type Linter } from "eslint";
@@ -7,7 +8,7 @@ import jestDomPlugin from "eslint-plugin-jest-dom";
 import playwrightPlugin from "eslint-plugin-playwright";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
-import storybookPlugin from "eslint-plugin-storybook";
+import type storybookPluginType from "eslint-plugin-storybook";
 import testingLibraryPlugin from "eslint-plugin-testing-library";
 import globals from "globals";
 import tsEslint from "typescript-eslint";
@@ -76,6 +77,9 @@ const hasJestDom = isPackageInstalled("@testing-library/jest-dom");
 const hasVitest = isPackageInstalled("vitest");
 const hasPlaywright = isPackageInstalled("@playwright/test");
 const hasStorybook = isPackageInstalled("storybook");
+const storybookPlugin = hasStorybook
+  ? (createRequire(import.meta.url)("eslint-plugin-storybook") as unknown as typeof storybookPluginType)
+  : null;
 
 const typeScriptExtensions = [".ts", ".cts", ".mts", ".tsx"];
 const allExtensions = [...typeScriptExtensions, ".js", ".jsx", ".mjs", ".cjs"];
