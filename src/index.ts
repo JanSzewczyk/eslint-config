@@ -143,7 +143,10 @@ const config = (
         "**/server-build/**",
         "**/dist/**",
         "**/.next/**",
-        "**/storybook-static/**"
+        "**/storybook-static/**",
+        "**/coverage/**",
+        "**/coverage-unit/**",
+        "**/coverage-storybook/**"
       ]
     },
 
