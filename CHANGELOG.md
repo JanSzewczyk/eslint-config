@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/JanSzewczyk/eslint-config/compare/v2.3.1...v2.3.2) (2026-05-14)
+
+### Bug Fixes
+
+* **deps:** add coverage directories to ignore list ([3760a65](https://github.com/JanSzewczyk/eslint-config/commit/3760a65d259bd8322604967ab29302b63f011d9b))
+* **deps:** update dependencies to latest versions for improved compatibility ([cb5d5a2](https://github.com/JanSzewczyk/eslint-config/commit/cb5d5a2535a4176c1d62966ebfd269d533c43f66))
+
+### Build System
+
+* **deps:** bump actions/dependency-review-action ([232a206](https://github.com/JanSzewczyk/eslint-config/commit/232a2069de63c5526c1660890d73ebc1278d163d))
+
 ## [2.3.1](https://github.com/JanSzewczyk/eslint-config/compare/v2.3.0...v2.3.1) (2026-05-07)
 
 ### Bug Fixes
