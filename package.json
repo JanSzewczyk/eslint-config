@@ -37,23 +37,23 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "^16.2.5",
-    "@vitest/eslint-plugin": "^1.6.16",
+    "@next/eslint-plugin-next": "^16.2.6",
+    "@vitest/eslint-plugin": "^1.6.17",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest-dom": "^5.5.0",
     "eslint-plugin-playwright": "^2.10.2",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-storybook": "^10.3.6",
+    "eslint-plugin-storybook": "^10.4.0",
     "eslint-plugin-testing-library": "^7.16.2",
     "globals": "^17.6.0",
-    "typescript-eslint": "^8.59.2"
+    "typescript-eslint": "^8.59.3"
   },
   "devDependencies": {
     "@szum-tech/prettier-config": "^1.6.2",
     "@szum-tech/semantic-release-config": "^2.3.7",
-    "@types/node": "^25.6.0",
+    "@types/node": "^25.8.0",
     "eslint": "^10.3.0",
     "jiti": "^2.7.0",
     "prettier": "^3.8.3",
