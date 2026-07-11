@@ -53,7 +53,7 @@
   "devDependencies": {
     "@szum-tech/prettier-config": "^1.6.2",
     "@szum-tech/semantic-release-config": "^2.3.7",
-    "@types/node": "^25.8.0",
+    "@types/node": "^25.9.5",
     "eslint": "^10.3.0",
     "jiti": "^2.7.0",
     "prettier": "^3.8.3",
