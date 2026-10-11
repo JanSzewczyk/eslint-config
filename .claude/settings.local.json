@@ -1,5 +1,0 @@
-{
-  "permissions": {
-    "allow": ["Bash(npm view:*)", "Read(//mnt/c/Users/jansz/Projekty/**)", "Bash(npm install:*)", "Bash(npm run:*)"]
-  }
-}
